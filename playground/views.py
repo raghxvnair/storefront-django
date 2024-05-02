@@ -7,6 +7,6 @@ from store.models import Product, Customer, Collection, Order, OrderItem
 
 def say_hello(request):
 
-    # inventory < 10 OR price < 20
-    queryset = Product.objects.filter(Q(inventory__lt=10) | Q(unit_price__lt=20))
+    # inventory = price 
+    queryset = Product.objects.filter(inventory = F("unit_price"))
     return render(request,'hello.html', {'products': list(queryset)})
