@@ -8,5 +8,5 @@ from store.models import Product, Customer, Collection, Order, OrderItem
 def say_hello(request):
 
     # inventory = price 
-    queryset = Product.objects.filter(inventory = F("unit_price"))
+    queryset = Product.objects.order_by('unit_price','-title') #add -title for desc
     return render(request,'hello.html', {'products': list(queryset)})
