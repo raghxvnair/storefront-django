@@ -6,6 +6,15 @@ from tags.models import TaggedItem
 
 def say_hello(request):
 
-    queryset = TaggedItem.objects.get_tags_for(Product,1)
+    # collection = Collection.objects.get(pk=11)
+    # collection.title = 'Games'
+    # collection.featured_product_id = None
+    # collection.save()
 
-    return render(request,'hello.html', {'orders': list(queryset)})
+    # Collection.objects.create(title='Games', featured_product_id=None)
+    # Collection.objects.filter(pk=11).update(featured_product_id=None)
+
+    # Collection.objects.filter(pk__gt=5).delete()
+
+
+    return render(request,'hello.html')
