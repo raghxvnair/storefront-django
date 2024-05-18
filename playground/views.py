@@ -8,14 +8,7 @@ from tags.models import TaggedItem
 def say_hello(request):
 
 
-    order = Order(pk=1001)
-
-    item = OrderItem()
-    item.order = order
-    item.product_id = 1
-    item.unit_price = 10
-    item.quantity = 5
-    item.save()
+    queryset = Product.objects.raw('SELECT * FROM store_product')
 
 
-    return render(request,'hello.html')
+    return render(request,'hello.html', {'orders': list(queryset)})

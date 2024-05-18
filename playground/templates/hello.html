@@ -2,10 +2,10 @@
     <body>
         <h1>Hello World</h1>
         <ul>
-            <li>{{orders}}</li>
-            {% comment %} {% for order in orders %}
-            <li>{{ order.id }} - {{ order.customer.first_name}} - {{order.orderitem_set__product.title}}</li>
-            {% endfor %} {% endcomment %}
+            {% comment %} <li>{{orders}}</li> {% endcomment %}
+            {% for order in orders %}
+            <li>{{order}}</li>
+            {% endfor %} 
         </ul>
     </body>
 </html>
